@@ -10,7 +10,7 @@ import FooterPage from "./components/Footer";
 
 function App() {
   return (
-    <div>
+    <div class="page-body">
       <Header />
       <NavBar />
       <HomepageCarousel />
