@@ -5,9 +5,10 @@ import HomepageCarousel from "./components/HomepageCarousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter as Router} from 'react-router-dom';
 
-import NavBar from "./components/NavBar";
+import NavBar from "./PageComponents/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FooterPage from "./components/Footer";
+import Quickbook from "./PageComponents/quickbook"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Router>
       <Header />
       <NavBar />
+      <Quickbook/>
       <HomepageCarousel />
       <FooterPage />
       </Router>
