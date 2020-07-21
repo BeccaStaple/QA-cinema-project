@@ -57,7 +57,6 @@ export default function quickbook() {
                         </div>
                     </div>
                     <input class="formButton FRC_button FRC_buttonRed FRC_inline" type="submit" value="Book Tickets" />
-                    <a href="#" id="quickBookButton" onclick="$('#quickbook').submit();return false;" class="formButton FRC_button FRC_buttonRed FRC_inline">Book Tickets</a>
                 </form>
             </div>
         </div>
