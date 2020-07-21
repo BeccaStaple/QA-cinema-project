@@ -5,11 +5,11 @@ import OpeningTimes from "../Pages/OpeningTimes";
 import NewReleases from "../Pages/NewReleases";
 import Screens from "../Pages/Screens";
 import Bookings from "../Pages/Bookings";
-import { Switch, Route, BrowserRouter as Router} from 'react-router-dom';
+import { Switch, Route} from 'react-router-dom';
 
 export default function Navigate() {
     return (
-    <Router>
+    
         <Switch>
             <Route exact path="/" component={HomePage}/>
             <Route exact path="/listings" component={Listings}/>
@@ -18,7 +18,7 @@ export default function Navigate() {
             <Route exact path="/screens" component={Screens}/>
             <Route exact path="/bookings" component={Bookings}/>
         </Switch>
-    </Router>
+    
     
     );
 }

@@ -21,7 +21,7 @@ export default function OpeningTimes() {
                         </tr>
                         <tr>
                         <td>WED</td>
-                        <td colSpan="2">9:00 - 22:00</td>
+                        <td>9:00 - 22:00</td>
                         </tr>
                         <tr>
                         <td>THU</td>
