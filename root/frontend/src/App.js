@@ -5,7 +5,7 @@ import HomepageCarousel from "./components/HomepageCarousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter as Router} from 'react-router-dom';
 
-import NavBar from "./PageComponents/NavBar";
+import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FooterPage from "./components/Footer";
 import Quickbook from "./PageComponents/quickbook"
