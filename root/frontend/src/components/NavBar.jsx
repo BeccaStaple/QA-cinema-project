@@ -1,9 +1,7 @@
 import React from "react";
-import {Navbar, Nav, Form} from "react-bootstrap";
+import {Navbar, Nav} from "react-bootstrap";
 import {Link} from 'react-router-dom';
 import Navigate from "../components/Navigate";
-
-
 
 
 export default function NavBar() {
@@ -35,8 +33,9 @@ export default function NavBar() {
                         
                     </Nav>
                 
-                
+              {/*Search bar to go here*/}  
             </Navbar>
+            
             </div>
 
             <div>

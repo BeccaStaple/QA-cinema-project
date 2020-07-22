@@ -16,7 +16,7 @@ export default class Search extends React.Component{
        event.preventDefault();
 
    }
-    render(){
+    render() {
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>

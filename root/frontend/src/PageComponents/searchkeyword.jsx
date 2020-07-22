@@ -9,30 +9,33 @@ export default class Search extends React.Component() {
         }
     }
 
-    componentDidMount{
+    componentDidMount() {
     Axios.get('http://www.omdbapi.com/?apikey=[yourkey]&')
         .then(res => {
             this.setState({ search: res.data })
         })
         .catch(err => console.error(err));
 
+    }
 
-handleChange = event => {
+    handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
-}
+    }
 
-handleSubmit = event => {
+    handleSubmit = event => {
     event.preventDefault();
 
-}
-render(){
-    return (
-        <div>
-            <form inline onSubmit={this.handleSubmit}>
-                <input value={this.state.search} onChange={this.handleChange} name='search' placeholder='Enter keyword...' />
-                <button>Search</button>
-            </form>
-        </div>
-    );
-}
+    }
+
+    render() {
+        return(
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <input value = {this.state.search} onChange={this.handleChange} name='search' placeholder='Enter keyword...'/>
+                    <button>Search</button>
+                </form>
+            </div>
+        )
+    } 
+
 }
