@@ -8,7 +8,7 @@ export default function NavBar() {
     return(
         <div>
             <div>
-            <Navbar expand="sm" bg="dark" variant="dark">
+            <Navbar expand="sm" bg="black" variant="dark">
                     <Nav className="mr-auto">
                     
                             <Nav.Link>
