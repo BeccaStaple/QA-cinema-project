@@ -1,5 +1,6 @@
 import React from "react";
 import HomePage from "../Pages/HomePage";
+import About from "../Pages/About";
 import Listings from "../Pages/Listings";
 import OpeningTimes from "../Pages/OpeningTimes";
 import NewReleases from "../Pages/NewReleases";
@@ -17,6 +18,7 @@ export default function Navigate() {
             <Route exact path="/new-releases" component={NewReleases}/>
             <Route exact path="/screens" component={Screens}/>
             <Route exact path="/bookings" component={Bookings}/>
+            <Route exact path="/About" component={About}/>
         </Switch>
     
     

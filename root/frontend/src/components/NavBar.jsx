@@ -16,6 +16,9 @@ export default function NavBar() {
                             </Nav.Link>
                         
                             <Nav.Link >
+                                <Link to="/about">About</Link>
+                            </Nav.Link>
+                            <Nav.Link >
                                 <Link to="/listings">Listings</Link>
                             </Nav.Link>
                             <Nav.Link>
