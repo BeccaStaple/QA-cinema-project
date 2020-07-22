@@ -1,7 +1,9 @@
 import React from "react";
-import {Navbar, Nav, Form, FormControl, Button} from "react-bootstrap";
+import {Navbar, Nav, Form} from "react-bootstrap";
 import {Link} from 'react-router-dom';
 import Navigate from "../components/Navigate";
+
+
 
 
 export default function NavBar() {
@@ -33,10 +35,6 @@ export default function NavBar() {
                         
                     </Nav>
                 
-                <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-info">Search</Button>
-                </Form>
                 
             </Navbar>
             </div>
