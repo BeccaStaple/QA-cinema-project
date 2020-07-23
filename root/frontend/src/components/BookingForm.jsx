@@ -9,6 +9,7 @@ export default class BookingForm extends React.Component {
                 title: "",
                 screen: "",
                 date: "",
+                time: "",
                 customerName: "",
                 adultTicket: "",
                 childTicket: "",
@@ -46,7 +47,7 @@ export default class BookingForm extends React.Component {
                             <div>
                             <label>Movie Title</label>
                             <select name="movie-title" component="select" >
-                                <option value={this.state.newBooking.title}>Movie 1</option>
+                                <option value={this.state.newBooking.title}>{this.state.newBooking.title}</option>
                                 <option value="movie2">Movie 2</option>
                                 <option value="movie3">Movie 3</option>
                             </select>
@@ -67,12 +68,24 @@ export default class BookingForm extends React.Component {
 
                             <div>
                             <label>Time</label>
-                            <input type="time" name="time" />
+                            <select name="screen" component="select" >
+                                <option value="screen1">12:00</option>
+                                <option value="screen2">Screen 2</option>
+                            </select>
                             </div>
 
                             <div>
                             <label>Name</label>
                             <input name="customerName" component="input" />
+                            </div>
+
+                            <div>
+                                <h3>Prices</h3>
+                                
+                                    <p>Adult - £12.55</p>
+                                    <p>Child - £7.75</p>
+                                    <p>Concession - £9.88</p>
+                                
                             </div>
 
                             <div>
