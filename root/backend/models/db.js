@@ -1,6 +1,7 @@
 "user strict";
 
 const mysql = require("mysql");
+
 const password = require("./dbpassword");
 
 // remote database connection
