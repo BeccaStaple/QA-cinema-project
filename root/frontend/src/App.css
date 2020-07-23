@@ -1,0 +1,28 @@
+
+
+
+.page-body {
+  background-color: #020202;
+  text-align: center;
+}
+
+.table-spacing {
+  margin: 20px;
+}
+
+.form-container {
+  margin: 7%;
+  background-color: #900d0d;
+  color: white;
+  width: auto;
+  height: auto;
+}
+
+.Form.Label {
+  padding: 10px;
+  margin: 10px;
+}
+
+#PaymentForm {
+  color: white;
+}
