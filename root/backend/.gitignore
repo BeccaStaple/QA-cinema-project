@@ -1,4 +1,4 @@
 node_modules
-models/dbpassword
+models/dbpassword.js
 securepw
 dbpass
