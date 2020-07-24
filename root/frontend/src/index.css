@@ -54,3 +54,9 @@ p {
 #PaymentForm {
   color: white;
 }
+
+.movieImg {
+  width: auto;
+  min-height: auto;
+}
+
