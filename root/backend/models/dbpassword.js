@@ -1,3 +1,3 @@
-const password = "codefirstgirls";
+const password = "icannotbehacked";
 
 module.exports = password;
