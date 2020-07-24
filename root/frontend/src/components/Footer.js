@@ -1,4 +1,5 @@
 import React from "react";
+import '../index.css';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 const FooterPage = () => {

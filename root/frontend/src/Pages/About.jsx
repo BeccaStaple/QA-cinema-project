@@ -1,4 +1,5 @@
 import React from "react";
+import '../index.css';
 import { Card, Button, CardDeck, Container } from "react-bootstrap";
 
 export default function About() {

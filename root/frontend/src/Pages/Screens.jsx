@@ -1,4 +1,5 @@
 import React from "react";
+import '../index.css';
 import { Container, Row, Col, Image, Jumbotron } from "react-bootstrap";
 
 export default function Screens() {
