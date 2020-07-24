@@ -1,4 +1,5 @@
 import React from "react";
+import '../index.css';
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Navigate from "../components/Navigate";
@@ -6,41 +7,34 @@ import Navigate from "../components/Navigate";
 
 export default function NavBar() {
 
-    const linkStyle = {
-        color: "white",
-        fontsize: 100,
-        padding: 40,
-        fontfamily: "sans-serif",
-        textalign: "center",
-}
 
 return (
     <div>
         <div>
-            <Navbar expand="sm" bg="black" variant="dark">
-                <Nav className="mr-auto  text-center">
+            <Navbar className="navbarLink" expand="sm" bg="black" variant="dark">
+                <Nav className="navbarLink">
 
                     <Nav.Link >
-                        <Link style={linkStyle} to="/">  Home </Link>
+                        <Link className="navbarLink" to="/">  Home </Link>
                     </Nav.Link>
 
                     <Nav.Link >
-                        <Link style={linkStyle} to="/about">About</Link>
+                        <Link className="navbarLink" to="/about">About</Link>
                     </Nav.Link>
                     <Nav.Link >
-                        <Link style={linkStyle} to="/listings">Listings</Link>
+                        <Link className="navbarLink" to="/listings">Listings</Link>
                     </Nav.Link>
                     <Nav.Link>
-                        <Link style={linkStyle} to="/opening-times">Opening Times</Link>
+                        <Link className="navbarLink" to="/opening-times">Opening Times</Link>
                     </Nav.Link>
                     <Nav.Link>
-                        <Link style={linkStyle} to="/new-releases">New Releases</Link>
+                        <Link className="navbarLink" to="/new-releases">New Releases</Link>
                     </Nav.Link>
                     <Nav.Link>
-                        <Link style={linkStyle} class="color-me" to="/screens">Screens</Link>
+                        <Link  className="navbarLink" to="/screens">Screens</Link>
                     </Nav.Link>
                     <Nav.Link >
-                        <Link style={linkStyle} to="/bookings">Bookings</Link>
+                        <Link className="navbarLink" to="/bookings">Bookings</Link>
                     </Nav.Link>
 
                 </Nav>

@@ -1,4 +1,5 @@
 import React from "react";
+import '../index.css';
 import HomePage from "../Pages/HomePage";
 import About from "../Pages/About";
 import Listings from "../Pages/Listings";

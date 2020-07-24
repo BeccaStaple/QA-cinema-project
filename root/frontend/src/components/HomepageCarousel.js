@@ -1,4 +1,5 @@
 import React from "react";
+import '../index.css';
 import Carousel from "react-bootstrap/Carousel";
 
 export default function HomepageCarousel() {

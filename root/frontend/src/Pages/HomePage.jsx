@@ -1,4 +1,5 @@
 import React from "react";
+import '../index.css';
 import HomepageCarousel from "../components/HomepageCarousel";
 import Quickbook from "../components/quickbook";
 import {Container, Button } from "react-bootstrap";

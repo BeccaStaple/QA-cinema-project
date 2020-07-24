@@ -1,5 +1,6 @@
 import React from "react";
 import Axios from "axios";
+import '../index.css';
 
 export default class Search extends React.Component() {
     constructor(props) {

@@ -7,7 +7,64 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+div{
+  margin: auto;
+  align-content: center;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+h3{
+  color: rgb(255, 255, 255);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+p {
+  color: rgb(255, 255, 255);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.navbarLink {
+  font-weight: normal;
+  color: #E7280F;
+  font-size: 30px;
+  padding: 50;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+
+.header-right{
+  width: 50%;
+  height: 50%;
+}
+
+
+
+.form-container {
+  margin: 7%;
+  background-color: #900d0d;
+  color: white;
+  width: auto;
+  height: auto;
+}
+
+.Form.Label {
+  padding: 10px;
+  margin: 10px;
+}
+
+#PaymentForm {
+  color: white;
+}
+
+.OpenTable{
+  width: 50%;
+  height: 50%;
 }
