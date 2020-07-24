@@ -12,7 +12,6 @@ export default class Listings extends React.Component {
 
   componentDidMount() {
     Axios.get("http://localhost:9090/cinema/movies").then((res) => {
-      debugger;
     const movies = res.data;
     this.setState({ movies });
     });
@@ -23,6 +22,7 @@ export default class Listings extends React.Component {
       return (
       <div>
         <p>Title: {movie.title}</p>
+        <img src={movie.movie_image} />
       </div>
       )
       
