@@ -6,10 +6,10 @@ export default function Screens() {
     return (
 
         <div>
-            <h1>Screens</h1>
+            <h3>Screens</h3>
             <Container>
+            <p>Standard Screens</p>
                 <Row>
-                    <p style={{ color: 'white' }}>Standard Screens</p>
                     <Col xs={6} md={3}>
                         <Image src={require('../img/screen-standard.jpg')} width="100%" height="100%" rounded />
                     </Col>
@@ -21,12 +21,11 @@ export default function Screens() {
                     </Col>
                 </Row>
                 <Row>
-                    <Jumbotron width= "50%" style={{background: 'black' }}>
-                    </Jumbotron>
+                    
                 </Row>
-
+                
+                <p>Directors Box - Deluxe Screen</p>
                 <Row>
-                    <p style={{ color: 'white' }}>Directors Box - Deluxe Screen</p>
                     <Col xs={6} md={3}>
                         <Image src={require('../img/deluxe-screen.jpg')} width="100%" height="100%" rounded />
                     </Col>
