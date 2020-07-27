@@ -18,10 +18,17 @@ code {
 }
 
 h1{
-  color: aliceblue;
+    color: rgb(255, 255, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+h3{
+  color: rgb(255, 255, 255);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 p {
-  color: 'white';
+  color: rgb(255, 255, 255);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .navbarLink {
@@ -37,6 +44,8 @@ p {
   width: 50%;
   height: 50%;
 }
+
+
 
 .form-container {
   margin: 7%;
@@ -55,8 +64,11 @@ p {
   color: white;
 }
 
+
 .movieImg {
   width: auto;
   min-height: auto;
 }
+
+
 
