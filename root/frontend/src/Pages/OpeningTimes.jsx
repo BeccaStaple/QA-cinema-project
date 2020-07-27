@@ -6,8 +6,9 @@ import {Table, Container} from "react-bootstrap";
 export default function OpeningTimes() {
     return (
         <div class="table-spacing">
-            <Container>
-                <Table size="md" variant="dark">
+            <div>
+            <Container className="opening-table">
+                <Table className="OpenTable" size="sm" variant="dark">
                     <tbody>
                         <tr>
                             <th colSpan="2">OPENING TIMES</th>
@@ -43,6 +44,7 @@ export default function OpeningTimes() {
                     </tbody>
                 </Table>
             </Container>
+            </div>
         </div>
         
     );
