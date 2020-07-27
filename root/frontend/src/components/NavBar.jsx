@@ -1,6 +1,6 @@
 import React from "react";
 import '../index.css';
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Navigate from "../components/Navigate";
 
