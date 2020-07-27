@@ -64,7 +64,11 @@ p {
   color: white;
 }
 
-.OpenTable{
-  width: 50%;
-  height: 50%;
+
+.movieImg {
+  width: auto;
+  min-height: auto;
 }
+
+
+
