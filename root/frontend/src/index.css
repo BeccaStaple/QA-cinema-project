@@ -70,5 +70,7 @@ p {
   min-height: auto;
 }
 
-
+.label-text {
+  color: red;
+}
 
