@@ -40,7 +40,7 @@ export const fetchGenre = async () => {
             params: {
                 api_key: apiKey,
                 language: 'en_US',
-                page: 1
+                page: 2
             }
         })
         const modifiedData = data['genres'].map((g) => ({
@@ -57,7 +57,7 @@ export const fetchMovieByGenre = async (genre_id) => {
             params: {
                 api_key: apiKey,
                 language: 'en_US',
-                page: 1,
+                page: 2,
                 with_genres: genre_id
             }
         })
@@ -100,7 +100,7 @@ export const fetchTopratedMovie = async () => {
             params: {
                 api_key: apiKey,
                 language: 'en_US',
-                page: 1
+                page: 2
             }
         })
         const posterUrl = 'https://image.tmdb.org/t/p/original/';
