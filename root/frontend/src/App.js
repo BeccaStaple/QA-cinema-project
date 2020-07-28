@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FooterPage from "./components/Footer";
 
+
 function App() {
   return (
     <div class="page-body">

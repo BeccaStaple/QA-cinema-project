@@ -34,10 +34,15 @@ p {
 .navbarLink {
   font-weight: normal;
   color: #E7280F;
-  font-size: 30px;
+  font-size: 25px;
   padding: 50;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: center;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-right{
@@ -64,11 +69,41 @@ p {
   color: white;
 }
 
-
-.movieImg {
-  width: auto;
-  min-height: auto;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 
+.list-inline-item .btn-outline-info {
+  color: #e23232;
+  border: 1px solid #000000;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  font-weight: 500;
+}
+.list-inline-item .btn-outline-info:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
 
+.fa-arrow-alt-circle-right {
+  color: #f40f0f;
+  font-size: 40px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.fa-arrow-alt-circle-right:hover {
+  color: #e6a9a9;
+  transition: all 0.3s ease-in-out;
+}

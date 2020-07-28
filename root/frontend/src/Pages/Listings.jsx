@@ -1,7 +1,7 @@
 import React from "react";
 import '../index.css';
 import Axios from "axios";
-import {Card, ListGroupItem, ListGroup, CardGroup, CardDeck } from "react-bootstrap";
+import {Card, ListGroupItem, ListGroup} from "react-bootstrap";
 
 export default class Listings extends React.Component {
   constructor(props) {

@@ -28,7 +28,7 @@ return (
                         <Link className="navbarLink" to="/opening-times">Opening Times</Link>
                     </Nav.Link>
                     <Nav.Link>
-                        <Link className="navbarLink" to="/new-releases">New Releases</Link>
+                        <Link className="navbarLink" to="/newReleases">New Releases</Link>
                     </Nav.Link>
                     <Nav.Link>
                         <Link  className="navbarLink" to="/screens">Screens</Link>
