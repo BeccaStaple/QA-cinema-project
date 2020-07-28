@@ -83,7 +83,7 @@ code {
     monospace;
 }
 
-.list-inline-item .btn-outline-info {
+.list-inline-item .btn-outline-danger {
   color: #e23232;
   border: 1px solid #000000;
   margin-bottom: 10px;
@@ -97,13 +97,13 @@ code {
   transition: all 0.3s ease-in-out;
 }
 
-.fa-arrow-alt-circle-right {
+.fa-play-circle {
   color: #f40f0f;
   font-size: 40px;
   font-weight: bolder;
   cursor: pointer;
 }
-.fa-arrow-alt-circle-right:hover {
-  color: #e6a9a9;
+.fa-play-circle:hover {
+  color: #000000;
   transition: all 0.3s ease-in-out;
 }

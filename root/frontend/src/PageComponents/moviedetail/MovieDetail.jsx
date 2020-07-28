@@ -45,12 +45,12 @@ export function MovieDetail({ match }) {
         <Modal.Header closeButton>
           <Modal.Title
             id="contained-modal-title-vcenter"
-            style={{ color: "#00000", fontWeight: "bolder" }}
+            style={{ color: "#000000", fontWeight: "bolder" }}
           >
             {detail.title}
           </Modal.Title>
-        </Modal.Header >
-        <Modal.Body>
+        </Modal.Header>
+        <Modal.Body style={{ backgroundColor: "#000000" }}>
           <ReactPlayer
             className="container-fluid"
             url={youtubeUrl + video.key}
@@ -134,7 +134,7 @@ export function MovieDetail({ match }) {
             <i
               onClick={() => setIsOpen(true)}
               className="far fa-play-circle"
-              style={{ fontSize: 95, color: "#f40f0f", cursor: "pointer" }}
+              style={{ fontSize: 95, color: "#e23232", cursor: "pointer" }}
             ></i>
           </div>
           <div
@@ -148,7 +148,7 @@ export function MovieDetail({ match }) {
 
       <div className="row mt-3">
         <div className="col">
-          <p style={{ color: "#ffff", fontWeight: "bolder" }}>GENRE</p>
+          <p style={{ color: "#5a606b", fontWeight: "bolder" }}>GENRE</p>
         </div>
       </div>
 
@@ -164,41 +164,42 @@ export function MovieDetail({ match }) {
             <ReactStars
               count={detail.vote_average}
               size={20}
-              color1={"#ffff"}
+              color1={"#f4c10f"}
             ></ReactStars>
           </div>
           <div className="mt-3">
-            <p style={{ color: "#ffff", fontWeight: "bolder" }}>OVERVIEW</p>
-            <p style={{ color: "#ffff"}}>{detail.overview}</p>
+            <p style={{ color: "#5a606b", fontWeight: "bolder" }}>OVERVIEW</p>
+            <p style={{ color: "#ffff", fontWeight: "bolder" }}>{detail.overview}</p>
+            
           </div>
         </div>
       </div>
 
       <div className="row mt-3">
         <div className="col-md-3">
-          <p style={{ color: "#ffff", fontWeight: "bolder" }}>RELEASE DATE</p>
+          <p style={{ color: "#5a606b", fontWeight: "bolder" }}>RELEASE DATE</p>
           <p style={{ color: "#ffff" }}>{detail.release_date}</p>
         </div>
         <div className="col-md-3">
-          <p style={{ color: "#ffff", fontWeight: "bolder" }}>RUN TIME</p>
+          <p style={{ color: "#5a606b", fontWeight: "bolder" }}>RUN TIME</p>
           <p style={{ color: "#ffff" }}>{detail.runtime}</p>
         </div>
         <div className="col-md-3">
-          <p style={{ color: "#ffff", fontWeight: "bolder" }}>BUDGET</p>
+          <p style={{ color: "#5a606b", fontWeight: "bolder" }}>BUDGET</p>
           <p style={{ color: "#ffff" }}>{detail.budget}</p>
         </div>
         <div className="col-md-3">
-          <p style={{ color: "#ffff", fontWeight: "bolder" }}>HOMEPAGE</p>
+          <p style={{ color: "#5a606b", fontWeight: "bolder" }}>HOMEPAGE</p>
           <p style={{ color: "#ffff" }}>{detail.homepage}</p>
         </div>
       </div>
 
       <div className="row mt-3">
         <div className="col">
-          <p style={{ color: "#ffff", fontWeight: "bolder" }}>CASTS</p>
+          <p style={{ color: "#5a606b", fontWeight: "bolder" }}>CASTS</p>
         </div>
       </div>
-      <div className="row mt-3" style={{ color: "#ffff", fontWeight: "bolder" }}>{castList}</div>
+      <div className="row mt-3">{castList}</div>
 
       <div className="row mt-3">
         <div className="col">
@@ -211,6 +212,7 @@ export function MovieDetail({ match }) {
       <div className="row mt-3">{similarMovieList}</div>
 
       <hr className="mt-5" style={{ borderTop: "1px solid #5a606b" }}></hr>
+
     </div>
   );
 }
