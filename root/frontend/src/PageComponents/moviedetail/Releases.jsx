@@ -41,6 +41,7 @@ export function Releases() {
           <img style={{ height: 600 }} src={item.backPoster} alt={item.title} />
         </div>
         <div className="carousel-center">
+          
         </div>
         <div
           className="carousel-caption"
