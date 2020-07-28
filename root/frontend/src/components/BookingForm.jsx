@@ -1,8 +1,13 @@
 import React from "react";
 import Axios from "axios";
 import '../index.css';
-import TotalTickets from "./totalTIckets";
+import {Button} from "react-bootstrap";
 
+import TotalTickets from "./totalTIckets";
+import OptionInput from "./Inputs/OptionInput";
+import ScreenInput from "./Inputs/ScreenInput";
+import DateInput from "./Inputs/DateInput";
+import TimeInput from "./Inputs/TimeInput";
 
 
 export default class BookingForm extends React.Component {
@@ -11,27 +16,27 @@ export default class BookingForm extends React.Component {
         this.state = {
             movieTitle: [],
             movieObject : []
-
         }
     }
 
+    
     componentDidMount() {
         Axios.get("http://localhost:9090/cinema/movies").then((res) => {
             const movieTitle = res.data;
+            console.log({movieTitle});
             this.setState({ movieTitle });
         });
-    }
 
-    movieChangeHandler(event) {
-        this.state = {[event.target.name] : event.target.value};  
-        Axios.get(`http://localhost:9090/cinema/bookings/makeBooking/${event.target.value}`).then((res) => {
+        Axios.get(`http://localhost:9090/cinema/bookings/makeBookings/`).then((res) => {
             const movieObject = res.data;
+            console.log({ movieObject });
             this.setState({ movieObject });
         });
     }
 
     changeHandler = event => {
         this.state = {[event.target.name] : event.target.value};
+        console.log(event.target.value);
     }
 
     submitHandler = event => {
@@ -40,63 +45,45 @@ export default class BookingForm extends React.Component {
     }
 
     render() {
-        const showMovies = this.state.movieTitle.map(movie => {
-            return (
-                <option name={movie.title} value={movie.movie_id}>
-                    {movie.title}
-                </option>
-            );
-        })
-        
-        const showScreens = this.state.movieObject.map(screen => {
-            return (
-                <option name={screen.fk_theatre_Screen_id} value={screen.fk_theatre_Screen_id}>
-                    {screen.fk_theatre_Screen_id}
-                </option>
-            );
-            
-        })
-
-        const showTimes = this.state.movieObject.map(times => {
-            return (
-                <option name={times.start_time} value={times.start_time}>
-                    {times.start_time}
-                </option>
-            );
-        })
-
 
         return (
-            <div>
             <form onSubmit={this.submitHandler}>
+                
                 <label className="label-text" for="selectMovie">Select Your Movie: </label>
-               <select id="selectMovie" onChange={this.movieChangeHandler}>
-                    {showMovies}
+                <select>
+                        {this.state.movieTitle.map(movie => <OptionInput {...movie}/>) } ;
                 </select>
-                    <br/>
+                <br/>
+
+
                 <label for="screenDropdown" className="label-text">Select your screen: </label>
                 <select id="screenDropdown" onChange={this.changeHandler}>
-                    {showScreens}
+                    {this.state.movieObject.map(screen => <ScreenInput {...screen} />)}
                 </select>
                     <br/>
+
+
                 <label for="selectDate" className="label-text">Select your date: </label>
-                <input id="selectDate" type="date" />
+                <DateInput />
                     <br/>
+
                 <label for="selectTime" className="label-text">Select your time: </label>
                 <select id="selectTime" onChange={this.changeHandler}>
-                    {showTimes}
+                    {this.state.movieObject.map(time => <TimeInput {...time}/>)}
                 </select>
                     <br/>
                 
                 <label className="label-text">Customer Full Name</label>
                 <input type="text"/>
                     <br/>
-                <button type="submit">Make Booking</button>
                 <TotalTickets/>
+                
+                <Button variant="red">Make Booking</Button>
+                
             </form>
 
             
-            </div>
+           
         );
     }
 
