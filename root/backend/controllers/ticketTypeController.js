@@ -1,7 +1,7 @@
 const connection = require("../models/db");
 
 const getTicketType = async (req, res, next) => {
-  connection.query("SELECT * FROM theatre_Screen", function (
+  connection.query("SELECT * FROM ticket_Type", function (
     err,
     results,
     fields

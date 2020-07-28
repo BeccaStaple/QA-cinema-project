@@ -5,4 +5,4 @@ const getTicketType = require("../controllers/ticketTypeController");
 
 ticketTypeRouter.get("/", getTicketType);
 
-module.exports = getTicketType;
+module.exports = ticketTypeRouter;
