@@ -8,6 +8,8 @@ import NewReleases from "../Pages/NewReleases";
 import { MovieDetail } from "../PageComponents/moviedetail/MovieDetail";
 import Screens from "../Pages/Screens";
 import Bookings from "../Pages/Bookings";
+import ContactUs from "../Pages/ContactUs";
+import Classification from "../Pages/Classification";
 import { Switch, Route} from 'react-router-dom';
 
 export default function Navigate() {
@@ -22,6 +24,8 @@ export default function Navigate() {
             <Route exact path="/screens" component={Screens}/>
             <Route exact path="/bookings" component={Bookings}/>
             <Route exact path="/About" component={About}/>
+            <Route exact path="/classification" component={Classification}/>
+            <Route exact path="/ContactUs" component={ContactUs}/>
         </Switch>
     
     

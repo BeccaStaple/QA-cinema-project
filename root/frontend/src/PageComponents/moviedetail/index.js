@@ -40,7 +40,7 @@ export const fetchGenre = async () => {
             params: {
                 api_key: apiKey,
                 language: 'en_US',
-                page: 2
+                page: 1
             }
         })
         const modifiedData = data['genres'].map((g) => ({
@@ -57,7 +57,7 @@ export const fetchMovieByGenre = async (genre_id) => {
             params: {
                 api_key: apiKey,
                 language: 'en_US',
-                page: 2,
+                page: 1,
                 with_genres: genre_id
             }
         })

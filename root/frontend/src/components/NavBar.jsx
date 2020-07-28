@@ -36,6 +36,12 @@ return (
                     <Nav.Link >
                         <Link className="navbarLink" to="/bookings">Bookings</Link>
                     </Nav.Link>
+                    <Nav.Link >
+                        <Link className="navbarLink" to="/Classification">Classification</Link>
+                    </Nav.Link>
+                    <Nav.Link >
+                        <Link className="navbarLink" to="/ContactUs">Contact</Link>
+                    </Nav.Link>
 
                 </Nav>
 
