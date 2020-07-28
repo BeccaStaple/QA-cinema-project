@@ -1,8 +1,11 @@
 const movieRouter = require("express").Router();
 
-const getMovies = require("../controllers/movieController");
+const {
+  getMovies,
+  getStartTimeById,
+} = require("../controllers/movieController");
 
 movieRouter.get("/", getMovies);
-// movieRouter.route("postMovie").post(postMovie);
+movieRouter.get("/startTimes/:id", getStartTimeById);
 
 module.exports = movieRouter;
