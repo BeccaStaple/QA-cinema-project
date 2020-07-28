@@ -5,7 +5,6 @@ import Quickbook from "../components/quickbook";
 import {Container, Button } from "react-bootstrap";
 
 
-
 export default function HomePage() {
     return (
         <div>
@@ -22,7 +21,7 @@ export default function HomePage() {
   to enjoying a screening and booking a ticket. 
   </p>
   <p>
-    <Button variant="danger">Contact Us</Button>
+    <Button type="submit" variant="danger">Contact Us </Button>
   </p>
 </Container>
         </div>

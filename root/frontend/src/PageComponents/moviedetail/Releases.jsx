@@ -154,9 +154,6 @@ export function Releases() {
 
       <div className="row mt-3">
         <div className="col">
-          <div className="float-right">
-            <i className="far fa-arrow-alt-circle-right"></i>
-          </div>
         </div>
       </div>
       <div className="row mt-3">{movieList}</div>
@@ -171,9 +168,7 @@ export function Releases() {
 
       <div className="row mt-3">
         <div className="col">
-          <div className="float-right">
-            <i className="far fa-arrow-alt-circle-right"></i>
-          </div>
+         
         </div>
       </div>
       <div className="row mt-3">{trendingPersons}</div>
