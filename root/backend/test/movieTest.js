@@ -33,8 +33,17 @@ describe("MOVIES", () => {
         });
     });
   });
-  describe("get start times ", () => {
-    it("GET: returns movie start times when user selects a film", () => {
+
+  describe("get start times by movie id", () => {
+    it("should return an array", () => {
+      return request(app)
+        .get("/cinema/movies/startTimes/1")
+        .expect(200)
+        .then((res) => {
+          expect(res.body).to.be.an("array");
+        });
+    });
+    it("GET: returns movie start times when given a film", () => {
       return request(app)
         .get("/cinema/movies/startTimes/1")
         .expect(200)
@@ -43,7 +52,7 @@ describe("MOVIES", () => {
           expect(startTimeOne).to.have.all.keys("start_time");
         });
     });
-    it("GET: returns the correct movie start times when a user selects a film", () => {
+    it("GET: returns the correct movie start times values when given a film", () => {
       return request(app)
         .get("/cinema/movies/startTimes/1")
         .expect(200)
@@ -55,6 +64,42 @@ describe("MOVIES", () => {
             },
             {
               start_time: 1600,
+            },
+          ]);
+        });
+    });
+  });
+
+  describe("get screens by movie id", () => {
+    it("GET: should return an array", () => {
+      return request(app)
+        .get("/cinema/movies/screenByMovie/1")
+        .expect(200)
+        .then((res) => {
+          expect(res.body).to.be.an("array");
+        });
+    });
+    it("GET: returns screen ids when given a movie ", () => {
+      return request(app)
+        .get("/cinema/movies/screenByMovie/1")
+        .expect(200)
+        .then((res) => {
+          const screensOne = res.body[0];
+          expect(screensOne).to.have.all.keys("fk_theatre_Screen_id");
+        });
+    });
+    it("GET: returns the correct values when given a movie", () => {
+      return request(app)
+        .get("/cinema/movies/screenByMovie/1")
+        .expect(200)
+        .then((res) => {
+          const screens = res.body;
+          expect(screens).to.eql([
+            {
+              fk_theatre_Screen_id: 1,
+            },
+            {
+              fk_theatre_Screen_id: 1,
             },
           ]);
         });
