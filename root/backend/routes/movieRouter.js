@@ -2,10 +2,10 @@ const movieRouter = require("express").Router();
 
 const {
   getMovies,
-  getStartTimeByID1,
+  getStartTimeById,
 } = require("../controllers/movieController");
 
 movieRouter.get("/", getMovies);
-movieRouter.get("/startTimesByID1", getStartTimeByID1);
+movieRouter.get("/startTimes/:id", getStartTimeById);
 
 module.exports = movieRouter;
