@@ -84,6 +84,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.label-text {
+  color: red;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
