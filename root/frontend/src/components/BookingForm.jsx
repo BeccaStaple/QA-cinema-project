@@ -97,11 +97,6 @@ export default class BookingForm extends React.Component {
                         <Button type="submit" variant="red">Make Booking</Button>
 
                     </form>
-                </div>
-            </div>
-
-
-
         );
     }
 
