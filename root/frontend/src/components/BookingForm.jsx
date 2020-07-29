@@ -1,7 +1,7 @@
 import React from "react";
 import Axios from "axios";
 import '../index.css';
-import {Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 import TotalTickets from "./totalTIckets";
 import OptionInput from "./Inputs/OptionInput";
@@ -15,27 +15,33 @@ export default class BookingForm extends React.Component {
         super(props);
         this.state = {
             movieTitle: [],
-            movieObject : []
+            movieObject: {
+                screens: [],
+                bookings: []
+            }
         }
     }
 
-    
+
     componentDidMount() {
         Axios.get("http://localhost:9090/cinema/movies").then((res) => {
             const movieTitle = res.data;
-            console.log({movieTitle});
+            console.log({ movieTitle });
             this.setState({ movieTitle });
         });
 
-        Axios.get(`http://localhost:9090/cinema/bookings/makeBookings/`).then((res) => {
-            const movieObject = res.data;
-            console.log({ movieObject });
-            this.setState({ movieObject });
+
+    }
+
+    movieChangeHandler = event => {
+        Axios.get(`http://localhost:9090/cinema/bookings/makeBookings/${event.target.value}`).then(({ data }) => {
+            debugger;
+            this.setState({ movieObject: data });
         });
     }
 
     changeHandler = event => {
-        this.state = {[event.target.name] : event.target.value};
+        this.state = { [event.target.name]: event.target.value };
         console.log(event.target.value);
     }
 
@@ -45,45 +51,44 @@ export default class BookingForm extends React.Component {
     }
 
     render() {
-
         return (
             <form onSubmit={this.submitHandler}>
-                
+
                 <label className="label-text" for="selectMovie">Select Your Movie: </label>
-                <select>
-                        {this.state.movieTitle.map(movie => <OptionInput {...movie}/>) } ;
+                <select onChange={this.movieChangeHandler}>
+                    {this.state.movieTitle.map(movie => <OptionInput {...movie} />)} ;
                 </select>
-                <br/>
+                <br />
 
 
                 <label for="screenDropdown" className="label-text">Select your screen: </label>
                 <select id="screenDropdown" onChange={this.changeHandler}>
-                    {this.state.movieObject.map(screen => <ScreenInput {...screen} />)}
+                    {this.state.movieObject.screens.map(({screen_name, theatre_Screen_id}) => <ScreenInput name = {screen_name} id = {theatre_Screen_id} />)}
                 </select>
-                    <br/>
+                <br />
 
 
                 <label for="selectDate" className="label-text">Select your date: </label>
                 <DateInput />
-                    <br/>
+                <br />
 
                 <label for="selectTime" className="label-text">Select your time: </label>
                 <select id="selectTime" onChange={this.changeHandler}>
-                    {this.state.movieObject.map(time => <TimeInput {...time}/>)}
+                    {this.state.movieObject.bookings.length > 0 && this.state.movieObject.bookings.map(booking => <TimeInput start_time={booking.start_time} />)}
                 </select>
-                    <br/>
-                
+                <br />
+
                 <label className="label-text">Customer Full Name</label>
-                <input type="text"/>
-                    <br/>
-                <TotalTickets/>
-                
+                <input type="text" />
+                <br />
+                {/* <TotalTickets /> */}
+
                 <Button variant="red">Make Booking</Button>
-                
+
             </form>
 
-            
-           
+
+
         );
     }
 

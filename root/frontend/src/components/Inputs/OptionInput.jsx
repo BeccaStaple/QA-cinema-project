@@ -4,7 +4,7 @@ export default function OptionInput(props) {
 
     
         return(
-            <option>
+            <option value={props.movie_id}>
                {props.title} 
             </option>
         );
