@@ -4,7 +4,7 @@ import {
   fetchMovieVideos,
   fetchCasts,
   fetchSimilarMovie,
-} from "./index";
+} from "./config";
 import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 import { Modal } from "react-bootstrap";
 import ReactPlayer from "react-player";

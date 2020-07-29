@@ -57,6 +57,13 @@ p {
   height: 50%;
 }
 
+.homepage{
+  margin-left: 2.5em;
+  padding: 2em 0em 3em 0em;
+  border-width: 2px; 
+  border-color: black; 
+  border-style:solid;
+}
 
 
 .form-container {
@@ -117,7 +124,7 @@ code {
 .bodyContact { background:rgb(30,30,40); }
 .form { max-width:420px; margin:50px auto; }
 
-.feedback-input {
+.feedback-input{
   color:white;
   font-family: Helvetica, Arial, sans-serif;
   font-weight:500;
@@ -168,12 +175,173 @@ code {
   align-items: center;
 
 }
+
+
 .OpenTable{
   width: 50%;
   height: 50%;
   padding: 10px;
   margin: 10px;
   color: #f40f0f;
+}
+
+.Search {
+  text-align: center;
+  background-image: linear-gradient(215deg,#000000);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #ffff;
+  font-family:Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+.inputbtn{
+  width: 950px;
+  
+}
+
+.inputbtn input{
+  background: #b49c9c;
+  letter-spacing: 0.02em;
+}
+
+.search-btn span{
+  color: #ffff;
+  background: #f40f0f;
+  border: none;
+}
+
+
+.mb-3:hover{
+  cursor: pointer;
+}
+
+span:hover{
+  color: #e3bcbc
+}
+
+.body{
+  width: 1000px;
+  min-height: 65vh;
+}
+
+.bodyHead{
+  text-align: left;
+  margin: 0 30px;
+  letter-spacing: 0.02em;
+}
+
+.movie{
+  width: 200px;
+  float: left;
+  margin: 0 25px 65px 25px;
+}
+
+.Moviecard{
+  width: 200px;
+  font-size: 15px;
+  height: 299px;
+  background: none;
+  color: #d8d6d6
+}
+
+.Moviecard img {
+  box-shadow: -5px 5px 10px #110202;
+  margin: 0
+}
+
+.Moviecard img:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+/* .rating{
+  background: rgb(205, 63, 63);
+  position: unset;
+  top: 230px;
+  left: 175px;
+  width: 45px;
+  height: 45px;
+  border-radius: 22.5px;
+  font-size: 1.1em;
+  line-height: 45px;
+  color: #110202
+} */
+.Moviecard-body, .Moviecard-body p, .Moviecard-body h5{
+  margin: 0;
+  padding: 0;
+  text-align: left
+}
+
+.Moviecard-body h5{
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+.Moviecard-body p {
+  font-size: 12px;
+  color: #cecbcb
+}
+
+
+.fallBack{
+  margin-top: 50px
+}
+
+.fallBack h5{
+  font-size: 1.5em
+}
+.fallBack b{
+  font-weight: 100;
+  color: #9b5f5f
+}
+
+.fallBack b:hover{
+  cursor: pointer;
+}
+
+.details{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 25px;
+  text-align: left;
+}
+
+.details img{
+  float: left;
+  margin: 0 25px;
+  box-shadow: -15px 15px 15px #110202;
+}
+.details h5{
+  font-size: .55em;
+  width: 800px;
+  text-align:  justify
+}
+
+.details .textDetail{
+  font-weight: 100;
+  font-size: 0.95em;
+  margin-left: 15px;
+  text-align: justify
+}
+
+.details button{
+   color: #b49c9c;
+   background: #394c75;
+   border: none;
+}
+
+.details button:hover{
+  background: #425379;
+  color: #b49c9c
+}
+
+.details button:focus {
+  outline: none
 }
 
 .footer{

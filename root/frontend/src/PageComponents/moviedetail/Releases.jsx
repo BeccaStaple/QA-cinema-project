@@ -6,7 +6,7 @@ import {
   fetchMovieByGenre,
   fetchPersons,
   fetchTopratedMovie,
-} from "./index";
+} from "./config";
 import RBCarousel from "react-bootstrap-carousel";
 import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 import { Link } from "react-router-dom";
