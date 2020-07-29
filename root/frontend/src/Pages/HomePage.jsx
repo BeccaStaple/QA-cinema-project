@@ -2,7 +2,7 @@ import React from "react";
 import '../index.css';
 import HomepageCarousel from "../components/HomepageCarousel";
 import Quickbook from "../components/quickbook";
-import {Container, Button } from "react-bootstrap";
+import {Container } from "react-bootstrap";
 
 
 export default function HomePage() {
@@ -20,9 +20,9 @@ export default function HomePage() {
   For first-time fans, this page is designed to help you navigate the waters 
   to enjoying a screening and booking a ticket. 
   </p>
-  <p>
+  {/* <p>
     <Button type="submit" variant="danger">Contact Us </Button>
-  </p>
+  </p> */}
 </Container>
         </div>
     );
