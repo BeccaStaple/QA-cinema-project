@@ -56,6 +56,7 @@ export default class BookingForm extends React.Component {
 
                 <label className="label-text" for="selectMovie">Select Your Movie: </label>
                 <select onChange={this.movieChangeHandler}>
+                    <option disabled selected value>-- Select film --</option>
                     {this.state.movieTitle.map(movie => <OptionInput {...movie} />)} ;
                 </select>
                 <br />
@@ -63,6 +64,7 @@ export default class BookingForm extends React.Component {
 
                 <label for="screenDropdown" className="label-text">Select your screen: </label>
                 <select id="screenDropdown" onChange={this.changeHandler}>
+                    <option disabled selected value>-- Select screen --</option>
                     {this.state.movieObject.screens.map(({screen_name, theatre_Screen_id}) => <ScreenInput name = {screen_name} id = {theatre_Screen_id} />)}
                 </select>
                 <br />
@@ -74,6 +76,7 @@ export default class BookingForm extends React.Component {
 
                 <label for="selectTime" className="label-text">Select your time: </label>
                 <select id="selectTime" onChange={this.changeHandler}>
+                    <option disabled selected value>-- Select time --</option>
                     {this.state.movieObject.bookings.length > 0 && this.state.movieObject.bookings.map(booking => <TimeInput start_time={booking.start_time} />)}
                 </select>
                 <br />
