@@ -3,7 +3,6 @@ import Axios from "axios";
 import '../index.css';
 import { Button } from "react-bootstrap";
 
-import TotalTickets from "./totalTIckets";
 import OptionInput from "./Inputs/OptionInput";
 import ScreenInput from "./Inputs/ScreenInput";
 import DateInput from "./Inputs/DateInput";
@@ -35,19 +34,20 @@ export default class BookingForm extends React.Component {
 
     movieChangeHandler = event => {
         Axios.get(`http://localhost:9090/cinema/bookings/makeBookings/${event.target.value}`).then(({ data }) => {
-            debugger;
             this.setState({ movieObject: data });
         });
     }
 
     changeHandler = event => {
         this.state = { [event.target.name]: event.target.value };
-        console.log(event.target.value);
     }
 
     submitHandler = event => {
         event.preventDefault();
-        console.log("posted");
+        const newBooking = this.state;
+        console.log(newBooking);
+        Axios.post(/*need http to post to */).then(/*set state*/);
+
     }
 
     render() {
@@ -56,6 +56,7 @@ export default class BookingForm extends React.Component {
 
                 <label className="label-text" for="selectMovie">Select Your Movie: </label>
                 <select onChange={this.movieChangeHandler}>
+                    <option disabled selected value>-- Select film --</option>
                     {this.state.movieTitle.map(movie => <OptionInput {...movie} />)} ;
                 </select>
                 <br />
@@ -63,6 +64,7 @@ export default class BookingForm extends React.Component {
 
                 <label for="screenDropdown" className="label-text">Select your screen: </label>
                 <select id="screenDropdown" onChange={this.changeHandler}>
+                    <option disabled selected value>-- Select screen --</option>
                     {this.state.movieObject.screens.map(({screen_name, theatre_Screen_id}) => <ScreenInput name = {screen_name} id = {theatre_Screen_id} />)}
                 </select>
                 <br />
@@ -74,6 +76,7 @@ export default class BookingForm extends React.Component {
 
                 <label for="selectTime" className="label-text">Select your time: </label>
                 <select id="selectTime" onChange={this.changeHandler}>
+                    <option disabled selected value>-- Select time --</option>
                     {this.state.movieObject.bookings.length > 0 && this.state.movieObject.bookings.map(booking => <TimeInput start_time={booking.start_time} />)}
                 </select>
                 <br />
@@ -81,9 +84,12 @@ export default class BookingForm extends React.Component {
                 <label className="label-text">Customer Full Name</label>
                 <input type="text" />
                 <br />
-                {/* <TotalTickets /> */}
 
-                <Button variant="red">Make Booking</Button>
+                <label className="label-text">Customer Email</label>
+                <input type="text" />
+                <br />
+
+                <Button type="submit" variant="red">Make Booking</Button>
 
             </form>
 
