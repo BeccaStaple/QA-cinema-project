@@ -18,7 +18,7 @@ export default class BookingForm extends React.Component {
                 screens: [],
                 bookings: []
             },
-            newBooking : {
+           
                 fk_movie_id : "",
                 fk_screen_id : "",
                 movie_date : "",
@@ -28,7 +28,9 @@ export default class BookingForm extends React.Component {
                 adult_qty: "",
                 child_qty : "",
                 concession_qty: "",
-            }
+
+                
+            
         }
     }
 
@@ -49,15 +51,17 @@ export default class BookingForm extends React.Component {
     }
 
     changeHandler = event => {
-        this.state.newBooking = { [event.target.name] : event.target.value };
+        this.setState({ [event.target.name] : event.target.value  });
         console.log(event.target.name);
         console.log(event.target.value);
     }
 
     submitHandler = event => {
         event.preventDefault();
-        console.log(this.state.newBooking);
-        Axios.post("http://localhost:9090/cinema/bookings/confirmbooking", this.state.newBooking).then(res => {
+        const bookingInfo = this.state;
+        console.log(bookingInfo);
+        
+        Axios.post("http://localhost:9090/cinema/bookings/confirmbooking", bookingInfo).then(res => {
             console.log(res);
             console.log(res.data);
         })
@@ -87,8 +91,8 @@ export default class BookingForm extends React.Component {
                 <br />
 
 
-                <label for="selectDate" className="label-text">Select your date: </label>
-                <DateInput name="movie_date" />
+                <label name="movie_date" for="selectDate" className="label-text">Select your date: </label>
+                <input onChange={this.changeHandler} name="movie_date" type="date"/>
                 <br />
 
                 <label for="selectTime" className="label-text">Select your time: </label>
@@ -99,11 +103,11 @@ export default class BookingForm extends React.Component {
                 <br />
 
                 <label className=" bookingSelection label-text">Customer Full Name</label>
-                <input name="customer_name" type="text" />
+                <input name="customer_name" type="text" onChange={this.changeHandler} />
                 <br />
 
-                <label className="bookingSelection label-text">Customer Email</label>
-                <input name="customer_email" type="text" />
+                <label className="bookingSelection label-text" >Customer Email</label>
+                <input name="customer_email" type="text" onChange={this.changeHandler} />
                 <br />
 
                 <label className="label-text">Adult (16+)</label>
