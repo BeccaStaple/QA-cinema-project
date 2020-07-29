@@ -52,46 +52,51 @@ export default class BookingForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.submitHandler}>
+            <div>
+                <div id="booking-form" class="flex-container">
+                <h4>Book Your Tickets</h4>
+                    <form id="BookingForm" onSubmit={this.submitHandler}>
 
-                <label className="label-text" for="selectMovie">Select Your Movie: </label>
-                <select onChange={this.movieChangeHandler}>
-                    <option disabled selected value>-- Select film --</option>
-                    {this.state.movieTitle.map(movie => <OptionInput {...movie} />)} ;
+                        <label className="bookingSelection label-text" for="selectMovie">Select Your Movie: </label>
+                        <select className="bookingSelection label-text" onChange={this.movieChangeHandler}>
+                            <option disabled selected value>-- Select film --</option>
+                            {this.state.movieTitle.map(movie => <OptionInput {...movie} />)} ;
                 </select>
-                <br />
+                        <br />
 
 
-                <label for="screenDropdown" className="label-text">Select your screen: </label>
-                <select id="screenDropdown" onChange={this.changeHandler}>
-                    <option disabled selected value>-- Select screen --</option>
-                    {this.state.movieObject.screens.map(({screen_name, theatre_Screen_id}) => <ScreenInput name = {screen_name} id = {theatre_Screen_id} />)}
-                </select>
-                <br />
+                        <label className="bookingSelection label-text" for="screenDropdown" className=" bookingForm label-text">Select your screen: </label>
+                        <select className="bookingSelection" id="screenDropdown" onChange={this.changeHandler}>
+                            <option disabled selected value>-- Select screen --</option>
+                            {this.state.movieObject.screens.map(({ screen_name, theatre_Screen_id }) => <ScreenInput name={screen_name} id={theatre_Screen_id} />)}
+                        </select>
+                        <br />
 
 
-                <label for="selectDate" className="label-text">Select your date: </label>
-                <DateInput />
-                <br />
+                        <label for="selectDate" className="bookingSelection label-text">Select your date: </label>
+                        <DateInput />
+                        <br />
 
-                <label for="selectTime" className="label-text">Select your time: </label>
-                <select id="selectTime" onChange={this.changeHandler}>
-                    <option disabled selected value>-- Select time --</option>
-                    {this.state.movieObject.bookings.length > 0 && this.state.movieObject.bookings.map(booking => <TimeInput start_time={booking.start_time} />)}
-                </select>
-                <br />
+                        <label for="selectTime" className="bookingSelection label-text">Select your time: </label>
+                        <select className="bookingSelection" id="selectTime" onChange={this.changeHandler}>
+                            <option disabled selected value>-- Select time --</option>
+                            {this.state.movieObject.bookings.length > 0 && this.state.movieObject.bookings.map(booking => <TimeInput start_time={booking.start_time} />)}
+                        </select>
+                        <br />
 
-                <label className="label-text">Customer Full Name</label>
-                <input type="text" />
-                <br />
+                        <label className="bookingSelection label-text">Customer Full Name</label>
+                        <input className="bookingSelection label-text" type="text" />
+                        <br />
 
-                <label className="label-text">Customer Email</label>
-                <input type="text" />
-                <br />
+                        <label className="bookingSelection label-text">Customer Email</label>
+                        <input className="bookingSelection label-text" type="text" />
+                        <br />
 
-                <Button type="submit" variant="red">Make Booking</Button>
+                        <Button type="submit" variant="red">Make Booking</Button>
 
-            </form>
+                    </form>
+                </div>
+            </div>
 
 
 

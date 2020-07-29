@@ -37,22 +37,22 @@ class ContactUs extends React.Component {
 
   render() {
     return (
-    <div>
-      <div class="flex-container">
-      <h4>Contact Us</h4>
-        <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-          <div>
-            <input name="name" type="text" class="feedback-input" placeholder="Name" value={this.state.name} onChange={this.onNameChange.bind(this)} />
-            <input name="email" type="text" class="feedback-input" placeholder="Email" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
-            <textarea name="text" class="feedback-input" placeholder="Comment" value={this.state.message} onChange={this.onMessageChange.bind(this)}></textarea>
-          </div>
-          <div>
-            <button type="submit" className="contactUsbtn btn-danger">Submit</button>
-          </div>
-        </form>
-      </div> 
-      </div> 
-	);
+      <div>
+        <div class="flex-container">
+          <h4>Contact Us</h4>
+          <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+            <div>
+              <input name="name" type="text" class="feedback-input" placeholder="Name" value={this.state.name} onChange={this.onNameChange.bind(this)} />
+              <input name="email" type="text" class="feedback-input" placeholder="Email" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
+              <textarea name="text" class="feedback-input" placeholder="Comment" value={this.state.message} onChange={this.onMessageChange.bind(this)}></textarea>
+            </div>
+            <div>
+              <button type="submit" className="contactUsbtn btn-danger">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
   }
 
   onNameChange(event) {
