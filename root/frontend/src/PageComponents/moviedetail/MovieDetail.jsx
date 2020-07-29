@@ -62,6 +62,7 @@ export function MovieDetail({ match }) {
     );
   };
 
+
   let genresList;
   if (genres) {
     genresList = genres.map((g, i) => {
