@@ -1,6 +1,7 @@
 import React from "react";
 import '../index.css';
 import Axios from "axios";
+import {Card, ListGroupItem, ListGroup} from "react-bootstrap";
 
 export default class Listings extends React.Component {
   constructor(props) {
@@ -12,25 +13,43 @@ export default class Listings extends React.Component {
 
   componentDidMount() {
     Axios.get("http://localhost:9090/cinema/movies").then((res) => {
-      debugger;
-    const movies = res.data;
-    this.setState({ movies });
+      const movies = res.data;
+      this.setState({ movies });
     });
   }
 
+
+
   render() {
-    const movieTitles = this.state.movies.map(movie => {
+
+    const showMovies = this.state.movies.map(movie => {
       return (
-      <div>
-        <p>Title: {movie.title}</p>
-      </div>
+        <div>
+          <Card  border="danger" style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={movie.movie_image}/>
+            <Card.Body>
+              <Card.Title>{movie.title}</Card.Title>
+              <Card.Text>{movie.description}</Card.Text>
+              <ListGroup className="list-group-flush">
+              <ListGroupItem>Duration: {movie.duration}</ListGroupItem>
+              <ListGroupItem>Year Released: {movie.year_released}</ListGroupItem>
+              <ListGroupItem>Director: {movie.director}</ListGroupItem>
+              <ListGroupItem>Cast: {movie.cast}</ListGroupItem>
+            </ListGroup>
+            </Card.Body>
+          </Card>
+        </div>
       )
-      
+
     })
     return (
       <div>
-        {movieTitles}
+
+        {showMovies}
+
+
       </div>
     );
   }
 }
+

@@ -1,112 +1,102 @@
 import React from "react";
 import Axios from "axios";
 import '../index.css';
+import { Button } from "react-bootstrap";
+
+import OptionInput from "./Inputs/OptionInput";
+import ScreenInput from "./Inputs/ScreenInput";
+import DateInput from "./Inputs/DateInput";
+import TimeInput from "./Inputs/TimeInput";
+
 
 export default class BookingForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            newBooking : {
-                title: "",
-                screen: "",
-                date: "",
-                time: "",
-                customerName: "",
-                adultTicket: "",
-                childTicket: "",
-                concessionTicket: "",
-            },
-
-            movieOptions: [],
-            screenOptions: [],
-            dateOptions: [],
+            movieTitle: [],
+            movieObject: {
+                screens: [],
+                bookings: []
+            }
         }
     }
+
 
     componentDidMount() {
-        Axios.post("http://localhost:3000").then(res => {
-            this.setState({newBooking: res.data})
-        }
-        )
+        Axios.get("http://localhost:9090/cinema/movies").then((res) => {
+            const movieTitle = res.data;
+            console.log({ movieTitle });
+            this.setState({ movieTitle });
+        });
+
+
     }
 
-    handleSubmit(event) {
+    movieChangeHandler = event => {
+        Axios.get(`http://localhost:9090/cinema/bookings/makeBookings/${event.target.value}`).then(({ data }) => {
+            this.setState({ movieObject: data });
+        });
+    }
+
+    changeHandler = event => {
+        this.state = { [event.target.name]: event.target.value };
+    }
+
+    submitHandler = event => {
         event.preventDefault();
+        const newBooking = this.state;
+        console.log(newBooking);
+        Axios.post(/*need http to post to */).then(/*set state*/);
 
     }
 
-    handleChange(event) {
+    render() {
+        return (
+            <form onSubmit={this.submitHandler}>
 
-    }
+                <label className="label-text" for="selectMovie">Select Your Movie: </label>
+                <select onChange={this.movieChangeHandler}>
+                    <option disabled selected value>-- Select film --</option>
+                    {this.state.movieTitle.map(movie => <OptionInput {...movie} />)} ;
+                </select>
+                <br />
 
 
-     render() {
-        return(
-            <div class="form-container">
-                    <form onSubmit={this.handleSubmit}>
-                        <h2>Booking Form</h2>
-                            <div>
-                            <label>Movie Title</label>
-                            <select name="movie-title" component="select" >
-                                <option value={this.state.newBooking.title}>{this.state.newBooking.title}</option>
-                                <option value="movie2">Movie 2</option>
-                                <option value="movie3">Movie 3</option>
-                            </select>
-                            </div>
+                <label for="screenDropdown" className="label-text">Select your screen: </label>
+                <select id="screenDropdown" onChange={this.changeHandler}>
+                    <option disabled selected value>-- Select screen --</option>
+                    {this.state.movieObject.screens.map(({screen_name, theatre_Screen_id}) => <ScreenInput name = {screen_name} id = {theatre_Screen_id} />)}
+                </select>
+                <br />
 
-                            <div>
-                            <label>Screen</label>
-                            <select name="screen" component="select" >
-                                <option value="screen1">Screen 1</option>
-                                <option value="screen2">Screen 2</option>
-                            </select>
-                            </div>
 
-                            <div>
-                            <label>Date</label>
-                            <input type="date" name="date" />
-                            </div>
+                <label for="selectDate" className="label-text">Select your date: </label>
+                <DateInput />
+                <br />
 
-                            <div>
-                            <label>Time</label>
-                            <select name="screen" component="select" >
-                                <option value="screen1">12:00</option>
-                                <option value="screen2">Screen 2</option>
-                            </select>
-                            </div>
+                <label for="selectTime" className="label-text">Select your time: </label>
+                <select id="selectTime" onChange={this.changeHandler}>
+                    <option disabled selected value>-- Select time --</option>
+                    {this.state.movieObject.bookings.length > 0 && this.state.movieObject.bookings.map(booking => <TimeInput start_time={booking.start_time} />)}
+                </select>
+                <br />
 
-                            <div>
-                            <label>Name</label>
-                            <input name="customerName" component="input" />
-                            </div>
+                <label className="label-text">Customer Full Name</label>
+                <input type="text" />
+                <br />
 
-                            <div>
-                                <h3>Prices</h3>
-                                
-                                    <p>Adult - £12.55</p>
-                                    <p>Child - £7.75</p>
-                                    <p>Concession - £9.88</p>
-                                
-                            </div>
+                <label className="label-text">Customer Email</label>
+                <input type="text" />
+                <br />
 
-                            <div>
-                            <label>Adult (16+)</label>
-                            <input type="number" name="adultTicket" component="input" />
-                            </div>
+                <Button type="submit" variant="red">Make Booking</Button>
 
-                            <div>
-                            <label>Child</label>
-                            <input type="number" name="childTicket" component="input" />
-                            </div>
+            </form>
 
-                            <div>
-                            <label>Concession</label>
-                            <input type="number" name="concessionTicket" component="input" />
-                            </div>
 
-                        <button type="submit">Proceed To Payment</button>
-                    </form>
-            </div>
+
         );
     }
+
+
 }

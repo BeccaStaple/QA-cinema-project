@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,24 +15,41 @@ div{
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 h1{
-  color: aliceblue;
+    color: rgb(255, 255, 255);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+
+h3{
+  color:  rgb(255, 255, 255);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+h4{
+  color:#df270f;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 p {
-  color: 'white';
+  color: rgb(255, 255, 255);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .navbarLink {
   font-weight: normal;
-  color: #E7280F;
-  font-size: 30px;
+  color: #df270f;
+  font-size: 25px;
   padding: 50;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family:Georgia, 'Times New Roman', Times, serif, Courier, monospace, Helvetica, sans-serif;
   text-align: center;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-right{
@@ -38,9 +57,11 @@ p {
   height: 50%;
 }
 
+
+
 .form-container {
   margin: 7%;
-  background-color: #900d0d;
+  background-color: #df270f;
   color: white;
   width: auto;
   height: auto;
@@ -53,4 +74,109 @@ p {
 
 #PaymentForm {
   color: white;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.label-text {
+  color: red;
+}
+
+code {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.list-inline-item .btn-outline-danger {
+  color: #df270f;
+  border: 1px solid #000000;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  font-weight: 500;
+}
+.list-inline-item .btn-outline-info:hover {
+  color: #a3aaad;
+  border-color: #4f5c61;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.navbarLink:hover {
+  color: #4f5c61;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.bodyContact { background:rgb(30,30,40); }
+.form { max-width:420px; margin:50px auto; }
+
+.feedback-input {
+  color:white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #df270f;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #df270f; }
+
+.textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+.contactUsbtn{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 100%;
+  background:#df270f;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+
+.contactUsbtn:hover { background:#df270f; color:white; }
+
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+
+}
+.OpenTable{
+  width: 50%;
+  height: 50%;
+  padding: 10px;
+  margin: 10px;
+  color: #f40f0f;
+}
+
+.footer{
+ border-radius: 10px;
+  border-color: #f40f0f;
 }

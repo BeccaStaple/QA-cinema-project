@@ -1,6 +1,6 @@
 import React from "react";
 import '../index.css';
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Navigate from "../components/Navigate";
 
@@ -28,13 +28,19 @@ return (
                         <Link className="navbarLink" to="/opening-times">Opening Times</Link>
                     </Nav.Link>
                     <Nav.Link>
-                        <Link className="navbarLink" to="/new-releases">New Releases</Link>
+                        <Link className="navbarLink" to="/newReleases">New Releases</Link>
                     </Nav.Link>
                     <Nav.Link>
                         <Link  className="navbarLink" to="/screens">Screens</Link>
                     </Nav.Link>
                     <Nav.Link >
                         <Link className="navbarLink" to="/bookings">Bookings</Link>
+                    </Nav.Link>
+                    <Nav.Link >
+                        <Link className="navbarLink" to="/Classification">Classification</Link>
+                    </Nav.Link>
+                    <Nav.Link >
+                        <Link className="navbarLink" to="/ContactUs">Contact</Link>
                     </Nav.Link>
 
                 </Nav>
