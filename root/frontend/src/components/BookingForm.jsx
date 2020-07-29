@@ -64,7 +64,7 @@ export default class BookingForm extends React.Component {
                     <option disabled selected value>-- Select Film --</option>
                     {this.state.movieTitle.map(movie => <OptionInput {...movie} />)} ;
                 </select>
-                <br />
+                        <br />
 
 
                 <label for="screenDropdown" className="label-text">Select your screen: </label>
@@ -75,9 +75,9 @@ export default class BookingForm extends React.Component {
                 <br />
 
 
-                <label for="selectDate" className="label-text">Select your date: </label>
-                <DateInput />
-                <br />
+                        <label for="selectDate" className="bookingSelection label-text">Select your date: </label>
+                        <DateInput />
+                        <br />
 
                 <label for="selectTime" className="label-text">Select your time: </label>
                 <select id="selectTime" onChange={this.changeHandler}>
@@ -86,20 +86,17 @@ export default class BookingForm extends React.Component {
                 </select>
                 <br />
 
-                <label className="label-text">Customer Full Name</label>
-                <input type="text" />
-                <br />
+                        <label className="bookingSelection label-text">Customer Full Name</label>
+                        <input className="bookingSelection label-text" type="text" />
+                        <br />
 
-                <label className="label-text">Customer Email</label>
-                <input type="text" />
-                <br />
+                        <label className="bookingSelection label-text">Customer Email</label>
+                        <input className="bookingSelection label-text" type="text" />
+                        <br />
 
-                <Button type="submit" variant="red">Make Booking</Button>
+                        <Button type="submit" variant="red">Make Booking</Button>
 
-            </form>
-
-
-
+                    </form>
         );
     }
 

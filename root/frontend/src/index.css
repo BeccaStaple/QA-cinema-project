@@ -59,7 +59,7 @@ p {
 
 .homepage{
   margin-left: 2.5em;
-  padding: 3em 0em 3em 0em;
+  padding: 2em 0em 3em 0em;
   border-width: 2px; 
   border-color: black; 
   border-style:solid;
@@ -124,7 +124,7 @@ code {
 .bodyContact { background:rgb(30,30,40); }
 .form { max-width:420px; margin:50px auto; }
 
-.feedback-input {
+.feedback-input{
   color:white;
   font-family: Helvetica, Arial, sans-serif;
   font-weight:500;
@@ -175,6 +175,8 @@ code {
   align-items: center;
 
 }
+
+
 .OpenTable{
   width: 50%;
   height: 50%;
