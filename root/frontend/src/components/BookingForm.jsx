@@ -5,7 +5,6 @@ import { Button } from "react-bootstrap";
 
 import OptionInput from "./Inputs/OptionInput";
 import ScreenInput from "./Inputs/ScreenInput";
-import DateInput from "./Inputs/DateInput";
 import TimeInput from "./Inputs/TimeInput";
 
 
