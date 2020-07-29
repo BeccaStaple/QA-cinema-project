@@ -84,7 +84,10 @@ export default class BookingForm extends React.Component {
                 <label className="label-text">Customer Full Name</label>
                 <input type="text" />
                 <br />
-                
+
+                <label className="label-text">Customer Email</label>
+                <input type="text" />
+                <br />
 
                 <Button type="submit" variant="red">Make Booking</Button>
 
