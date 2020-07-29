@@ -183,16 +183,11 @@ export function Releases() {
 
       <div className="row mt-3">
         <div className="col">
-          <div className="float-right">
-            <i className="far fa-arrow-alt-circle-right"></i>
-          </div>
+          
         </div>
       </div>
       <div className="row mt-3">{topRatedList}</div>
-
       <hr className="mt-5" style={{ borderTop: "1px solid #5a606b" }}></hr>
-
-      
     </div>
   );
 }
