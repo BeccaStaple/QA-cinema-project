@@ -22,8 +22,9 @@ export default function About() {
                                             <Card.Body>
                                                 <Card.Title>Nicole </Card.Title>
                                                 <Card.Text>
-                                                    This card has supporting text below as a natural lead-in to additional content.
-                                                    This card has supporting text below as a natural lead-in to additional content.
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                                Mauris feugiat nisl ac lorem posuere, nec vestibulum risus tincidunt. 
+                                                Nunc accumsan iaculis augue, vel sagittis elit convallis sed.
                                      </Card.Text>
 
                                             </Card.Body>
@@ -40,8 +41,9 @@ export default function About() {
                                             <Card.Body>
                                                 <Card.Title>Rebecca</Card.Title>
                                                 <Card.Text>
-                                                    This card has supporting text below as a natural lead-in to additional content.
-                                                    This card has supporting text below as a natural lead-in to additional content.
+                                                Rebecca had very little experience in coding before joining QA Academy. 
+                                                She has since been learning Java, MERN and Spring Boot among other technologies 
+                                                and has really enjoyed the challenge.
                                 </Card.Text>
                                             </Card.Body>
                                             <Card.Footer>
@@ -57,8 +59,9 @@ export default function About() {
                                             <Card.Body>
                                                 <Card.Title>Tayyibah</Card.Title>
                                                 <Card.Text>
-                                                This card has supporting text below as a natural lead-in to additional content.
-                                                    This card has supporting text below as a natural lead-in to additional content.
+                                               Tayyibah has learnt alot during her time at the QA academy. 
+                                               She has learnt to work with Java, MERN stack, Springboot and various testing methods.
+                                               She has loved this experience.
                                     </Card.Text>
 
                                             </Card.Body>
