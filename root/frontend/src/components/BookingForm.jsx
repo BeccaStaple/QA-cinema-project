@@ -27,9 +27,9 @@ export default class BookingForm extends React.Component {
                 movie_time: "",
                 customer_name: "",
                 customer_email: "",
-                adult_qty: null,
-                child_qty: null,
-                concession_qty: null,
+                adult_qty: 0,
+                child_qty: 0,
+                concession_qty: 0,
             }
         }
     }
@@ -66,9 +66,7 @@ export default class BookingForm extends React.Component {
         console.log(bookingInfo);
 
         Axios.post("http://localhost:9090/cinema/bookings/confirmbooking", bookingInfo).then(res => {
-            console.log("hello");
-            console.log(res);
-            console.log(res.data);
+            alert("Thank you for your booking, your ID is: " + res.data.insertId)
         })
             .catch(err => {
                 console.log(err);
