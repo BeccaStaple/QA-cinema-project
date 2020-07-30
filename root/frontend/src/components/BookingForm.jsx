@@ -66,12 +66,14 @@ export default class BookingForm extends React.Component {
         console.log(bookingInfo);
 
         Axios.post("http://localhost:9090/cinema/bookings/confirmbooking", bookingInfo).then(res => {
-            alert("Thank you for your booking, your ID is: " + res.data.insertId)
+            console.log(res.data);
+            alert("Thank you for your booking, your ID is: " + res.data.insertId);
+            
         })
             .catch(err => {
                 console.log(err);
             });
-
+            
     }
 
     render() {
@@ -117,11 +119,11 @@ export default class BookingForm extends React.Component {
                    
 
                 <label className="label-text">Adult (16+)</label>
-                <input name="adult_qty" onChange={this.changeHandler} type="number" />
+                <input value={this.state.adult_qty} name="adult_qty" onChange={this.changeHandler} type="number" />
                 <label className="label-text">Concession (Student / OAP)</label>
-                <input name="child_qty" onChange={this.changeHandler} type="number" />
+                <input value={this.state.child_qty} name="child_qty" onChange={this.changeHandler} type="number" />
                 <label className="label-text">Child (15 and under)</label>
-                <input name="concession_qty" onChange={this.changeHandler} type="number" />
+                <input value={this.state.concession_qty} name="concession_qty" onChange={this.changeHandler} type="number" />
                 <br />
 
                 <Button type="submit" variant="red">Make Booking</Button>
