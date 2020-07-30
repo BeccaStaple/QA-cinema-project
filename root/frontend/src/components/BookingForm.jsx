@@ -113,6 +113,9 @@ export default class BookingForm extends React.Component {
                 <input name="customer_email" type="text" onChange={this.changeHandler} />
                 <br />
 
+
+                   
+
                 <label className="label-text">Adult (16+)</label>
                 <input name="adult_qty" onChange={this.changeHandler} type="number" />
                 <label className="label-text">Concession (Student / OAP)</label>
@@ -124,6 +127,7 @@ export default class BookingForm extends React.Component {
                 <Button type="submit" variant="red">Make Booking</Button>
 
             </form>
+
 
         );
     }

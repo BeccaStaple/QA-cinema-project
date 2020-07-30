@@ -77,12 +77,6 @@ export default function Classification() {
                             <img alt="" class="media-image" height="50" width="50" typeof="foaf:Image" src="/18_RGB.png" /></a>
                             <br />Suitable only for adults</p>
                     </Col>
-
-                    <Col xs={6} md={4} style={{ color: "white" }}>
-                        <p><a href="https://www.bbfc.co.uk/about-classification/r18">
-                            <img alt="" class="media-image" height="50" width="50" typeof="foaf:Image" src="/R18.png" /></a>
-                            <br />Adults works for licensed premises only</p>
-                    </Col>
                 </Row>
             </Container>
         </div>
