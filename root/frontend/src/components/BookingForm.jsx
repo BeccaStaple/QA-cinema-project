@@ -22,12 +22,14 @@ export default class BookingForm extends React.Component {
                 fk_movie_id: "",
                 fk_screen_id: "",
                 movie_date: "",
+                fk_movieTime_id : null,
+                fk_ticket_Type_id : null,
                 movie_time: "",
                 customer_name: "",
                 customer_email: "",
-                adult_qty: "",
-                child_qty: "",
-                concession_qty: "",
+                adult_qty: null,
+                child_qty: null,
+                concession_qty: null,
             }
         }
     }
