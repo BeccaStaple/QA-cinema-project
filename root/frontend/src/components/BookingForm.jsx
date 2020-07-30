@@ -2,6 +2,7 @@ import React from "react";
 import Axios from "axios";
 import '../index.css';
 import { Button } from "react-bootstrap";
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 import OptionInput from "./Inputs/OptionInput";
 import ScreenInput from "./Inputs/ScreenInput";
@@ -78,9 +79,11 @@ export default class BookingForm extends React.Component {
 
     render() {
         return (
+        <div className="booking-form">
             <form onSubmit={this.submitHandler}>
 
                 <label className="label-text" for="selectMovie">Select Your Movie: </label>
+                <br />
                 <select name="fk_movie_id" onChange={this.movieChangeHandler}>
                     <option disabled selected value>-- Select Film --</option>
                     {this.state.movieTitle.map(movie => <OptionInput {...movie} />)} ;
@@ -89,6 +92,7 @@ export default class BookingForm extends React.Component {
 
 
                 <label for="screenDropdown" className="label-text">Select your screen: </label>
+                <br />
                 <select name="fk_screen_id" id="screenDropdown" onChange={this.changeHandler}>
                     <option disabled selected value>-- Select Screen --</option>
                     {this.state.movieObject.screens.map(({ screen_name, theatre_Screen_id }) => <ScreenInput name={screen_name} id={theatre_Screen_id} />)}
@@ -97,10 +101,12 @@ export default class BookingForm extends React.Component {
 
 
                 <label name="movie_date" for="selectDate" className="label-text">Select your date: </label>
+                <br />
                 <input onChange={this.changeHandler} name="movie_date" type="date" />
                 <br />
 
                 <label for="selectTime" className="label-text">Select your time: </label>
+                <br />
                 <select name="movie_time" id="selectTime" onChange={this.changeHandler}>
                     <option disabled selected value>-- Select Time --</option>
                     {this.state.movieObject.bookings.length > 0 && this.state.movieObject.bookings.map(booking => <TimeInput start_time={booking.start_time} />)}
@@ -108,28 +114,35 @@ export default class BookingForm extends React.Component {
                 <br />
 
                 <label className=" bookingSelection label-text">Customer Full Name</label>
+                <br />
                 <input name="customer_name" type="text" onChange={this.changeHandler} />
                 <br />
 
                 <label className="bookingSelection label-text" >Customer Email</label>
+                <br />
                 <input name="customer_email" type="text" onChange={this.changeHandler} />
                 <br />
 
 
                    
 
-                <label className="label-text">Adult (16+)</label>
-                <input value={this.state.adult_qty} name="adult_qty" onChange={this.changeHandler} type="number" />
-                <label className="label-text">Concession (Student / OAP)</label>
-                <input value={this.state.child_qty} name="child_qty" onChange={this.changeHandler} type="number" />
-                <label className="label-text">Child (15 and under)</label>
-                <input value={this.state.concession_qty} name="concession_qty" onChange={this.changeHandler} type="number" />
+                <label className="label-text">Amount of Adult Tickets (16+)</label>
+                <br/>
+                <input className="ticket-input" value={this.state.adult_qty} name="adult_qty" onChange={this.changeHandler} type="number" />
+                <br/>
+                <label className="label-text"> Amount of Child Tickets(Student / OAP)</label>
+                <br/>
+                <input className="ticket-input" value={this.state.child_qty} name="child_qty" onChange={this.changeHandler} type="number" />
+                <br/>
+                <label className="label-text"> Amount of Concession Tickets (15 and under)</label>
+                <br/>
+                <input className="ticket-input" value={this.state.concession_qty} name="concession_qty" onChange={this.changeHandler} type="number" />
                 <br />
 
                 <Button type="submit" variant="red">Make Booking</Button>
 
             </form>
-
+        </div>
 
         );
     }

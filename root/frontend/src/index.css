@@ -348,3 +348,14 @@ span:hover{
  border-radius: 10px;
   border-color: #f40f0f;
 }
+
+.booking-form {
+  width: 28%;
+  text-align: left;
+  background-color: charcoal;
+}
+
+.ticket-input {
+  width: 20%;
+  
+}
