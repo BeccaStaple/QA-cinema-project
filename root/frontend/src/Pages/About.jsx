@@ -22,9 +22,10 @@ export default function About() {
                                             <Card.Body>
                                                 <Card.Title>Nicole </Card.Title>
                                                 <Card.Text>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                Mauris feugiat nisl ac lorem posuere, nec vestibulum risus tincidunt. 
-                                                Nunc accumsan iaculis augue, vel sagittis elit convallis sed.
+                                                I have loved being a trainee at QA Consulting. 
+                                                I have learnt more than I ever thought possible in 12 weeks and feel 
+                                                exciting to keep developing those skills as a Junior Software Consultant.
+                                            
                                      </Card.Text>
 
                                             </Card.Body>
