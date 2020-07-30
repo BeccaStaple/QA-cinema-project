@@ -41,8 +41,8 @@ const getMakeBookingData = async (req, res, next) => {
 const postBooking = async (req, res, next) => {
   let customerName = req.body.customer_name;
   let customerEmail = req.body.customer_email;
-  let movieTimeId = req.body.fk_movieTime_id;
-  let ticketTypeId = req.body.fk_ticket_Type_id;
+  let movieTimeId = null;
+  let ticketTypeId = null;
   let paymentId = null;
   let adultQuantity = req.body.adult_qty;
   let childQuantity = req.body.child_qty;

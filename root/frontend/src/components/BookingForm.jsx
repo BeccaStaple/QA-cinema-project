@@ -17,19 +17,20 @@ export default class BookingForm extends React.Component {
                 screens: [],
                 bookings: []
             },
-           
-                fk_movie_id : "",
-                fk_screen_id : "",
-                movie_date : "",
-                movie_time : "",
-                customer_name : "",
-                customer_email : "",
-                adult_qty: "",
-                child_qty : "",
-                concession_qty: "",
 
-                
-            
+            newBooking: {
+                fk_movie_id: "",
+                fk_screen_id: "",
+                movie_date: "",
+                fk_movieTime_id : null,
+                fk_ticket_Type_id : null,
+                movie_time: "",
+                customer_name: "",
+                customer_email: "",
+                adult_qty: 0,
+                child_qty: 0,
+                concession_qty: 0,
+            }
         }
     }
 
@@ -44,30 +45,35 @@ export default class BookingForm extends React.Component {
     }
 
     movieChangeHandler = event => {
+        this.setState({ newBooking: { [event.target.name]: event.target.value } })
         Axios.get(`http://localhost:9090/cinema/bookings/makeBookings/${event.target.value}`).then(({ data }) => {
             this.setState({ movieObject: data });
         });
     }
 
     changeHandler = event => {
-        this.setState({ [event.target.name] : event.target.value  });
+        const bookingNew = this.state.newBooking;
+        bookingNew[event.target.name] = event.target.value;
+        this.setState({ bookingNew });
         console.log(event.target.name);
         console.log(event.target.value);
     }
 
     submitHandler = event => {
         event.preventDefault();
-        const bookingInfo = this.state;
+        console.log(this.state);
+        const bookingInfo = this.state.newBooking;
         console.log(bookingInfo);
-        
-        Axios.post("http://localhost:9090/cinema/bookings/confirmbooking", bookingInfo).then(res => {
-            console.log(res);
-            console.log(res.data);
-        })
-        .catch(err => {
-            console.log(err);
-        });
 
+        Axios.post("http://localhost:9090/cinema/bookings/confirmbooking", bookingInfo).then(res => {
+            console.log(res.data);
+            alert("Thank you for your booking, your ID is: " + res.data.insertId);
+            
+        })
+            .catch(err => {
+                console.log(err);
+            });
+            
     }
 
     render() {
@@ -79,19 +85,19 @@ export default class BookingForm extends React.Component {
                     <option disabled selected value>-- Select Film --</option>
                     {this.state.movieTitle.map(movie => <OptionInput {...movie} />)} ;
                 </select>
-                        <br />
+                <br />
 
 
                 <label for="screenDropdown" className="label-text">Select your screen: </label>
                 <select name="fk_screen_id" id="screenDropdown" onChange={this.changeHandler}>
                     <option disabled selected value>-- Select Screen --</option>
-                    {this.state.movieObject.screens.map(({screen_name, theatre_Screen_id}) => <ScreenInput name = {screen_name} id = {theatre_Screen_id} />)}
+                    {this.state.movieObject.screens.map(({ screen_name, theatre_Screen_id }) => <ScreenInput name={screen_name} id={theatre_Screen_id} />)}
                 </select>
                 <br />
 
 
                 <label name="movie_date" for="selectDate" className="label-text">Select your date: </label>
-                <input onChange={this.changeHandler} name="movie_date" type="date"/>
+                <input onChange={this.changeHandler} name="movie_date" type="date" />
                 <br />
 
                 <label for="selectTime" className="label-text">Select your time: </label>
@@ -113,11 +119,11 @@ export default class BookingForm extends React.Component {
                    
 
                 <label className="label-text">Adult (16+)</label>
-                <input name="adult_qty" onChange={this.changeHandler} type="number" />
+                <input value={this.state.adult_qty} name="adult_qty" onChange={this.changeHandler} type="number" />
                 <label className="label-text">Concession (Student / OAP)</label>
-                <input name="child_qty" onChange={this.changeHandler} type="number" />
+                <input value={this.state.child_qty} name="child_qty" onChange={this.changeHandler} type="number" />
                 <label className="label-text">Child (15 and under)</label>
-                <input name="concession_qty" onChange={this.changeHandler} type="number" />
+                <input value={this.state.concession_qty} name="concession_qty" onChange={this.changeHandler} type="number" />
                 <br />
 
                 <Button type="submit" variant="red">Make Booking</Button>
